@@ -31,31 +31,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-jz-gfm">
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RFQ-jz-gfm">
                                 <rect key="frame" x="10" y="728" width="394" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemTealColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQU-7S-KqU">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uQU-7S-KqU">
                                 <rect key="frame" x="20" y="811" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </switch>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jkg-RQ-8rX">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jkg-RQ-8rX">
                                 <rect key="frame" x="133" y="792" width="240" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="Tm5-1r-JgY"/>
-                                    <constraint firstAttribute="width" constant="240" id="ul6-c5-0m1"/>
-                                </constraints>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Jkg-RQ-8rX" secondAttribute="bottom" constant="30" id="MSP-vC-Yxb"/>
-                            <constraint firstItem="Jkg-RQ-8rX" firstAttribute="leading" secondItem="uQU-7S-KqU" secondAttribute="trailing" constant="64" id="fGE-0a-8n7"/>
-                            <constraint firstItem="Jkg-RQ-8rX" firstAttribute="top" secondItem="RFQ-jz-gfm" secondAttribute="bottom" constant="20" id="fgK-iQ-P45"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Jkg-RQ-8rX" secondAttribute="trailing" constant="41" id="wgS-gz-b4V"/>
-                        </constraints>
                     </view>
                     <connections>
                         <outlet property="tableView" destination="gc0-hK-Yaz" id="Lw2-oo-GNq"/>
