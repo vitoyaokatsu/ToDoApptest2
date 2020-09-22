@@ -1,6 +1,6 @@
 import UIKit
 
-class ViewController: UIViewController, UITextFieldDelegate{
+class ViewController: UIViewController{
 
     @IBOutlet weak var tableView: UITableView!
     
@@ -24,11 +24,7 @@ class ViewController: UIViewController, UITextFieldDelegate{
             print("aaaIsWhat\(aaa)")
             print("ここでとめます")
         }
-        
-        
-
-        
-
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,8 +32,11 @@ class ViewController: UIViewController, UITextFieldDelegate{
         
     }
     
+}
 
     
+extension ViewController: UITextFieldDelegate{
+        
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {// returnキーを押した時の処理
         // 引数がテキストフィールドの値なのでシュッドリターンになるのか？？？
         
@@ -61,16 +60,17 @@ class ViewController: UIViewController, UITextFieldDelegate{
         return true
     }
     
-
-    
-    
 }
+
+
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     print("you tapped me")
     }
 }
+
+
 
 extension ViewController: UITableViewDataSource {
     
@@ -80,15 +80,10 @@ extension ViewController: UITableViewDataSource {
         
     }
     
-    
-    
-    
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int { // セルの数
         return todos.count
     }
-    
-    
     
     
     func numberOfSections(in tableView: UITableView) -> Int {// セクションの数
@@ -105,6 +100,8 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == UITableViewCell.EditingStyle.delete {
