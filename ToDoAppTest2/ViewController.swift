@@ -22,9 +22,6 @@ class ViewController: UIViewController{
         colourSwitch.frame = CGRect(x:viewWidth * 0.07, y:viewHeight * 0.92, width:75, height:50)
         colourSwitch.isOn = false
         colourSwitch.addTarget(self, action: Selector(("onClick:")), for: UIControl.Event.valueChanged)
-//        swh.on = true
-//                swh.addTarget(self, action: "onClick:", forControlEvents: UIControlEvents.ValueChanged)
-//                self.view.addSubview(swh)
         return colourSwitch
     }()
     
@@ -47,6 +44,15 @@ class ViewController: UIViewController{
         
         if let bbb = userDefaults.object(forKey: "colour"){
             colour = bbb as! Bool
+            print("bbbIsWhat_\(colour)")
+        }
+        
+        if colour == true{
+            colourView.backgroundColor = UIColor.red
+            colourSwitch.isOn = true
+        }else{
+            colourView.backgroundColor = UIColor.blue
+            colourSwitch.isOn = false
         }
     
     }
@@ -55,13 +61,19 @@ class ViewController: UIViewController{
             
         if sender.isOn {
                 print("ON")
+                colour = true
                 colourView.backgroundColor = UIColor.red
                 userDefaults.set(colour, forKey: "colour")
                 print("userDefault=\(userDefaults)")
+                print(colour)
             }
             else {
                 print("OFF")
+                colour = false
                 colourView.backgroundColor = UIColor.blue
+                userDefaults.set(colour, forKey: "colour")
+                print("userDefault=\(userDefaults)")
+                print(colour)
             }
         }
 
