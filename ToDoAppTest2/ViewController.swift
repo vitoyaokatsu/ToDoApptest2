@@ -6,26 +6,64 @@ class ViewController: UIViewController{
     
     @IBOutlet weak var textField: UITextField!
     
+    @IBOutlet weak var colourView: UIImageView!
+    
+    
     var todos: Array<String> = []
+    var colour = true
     
     let userDefaults = UserDefaults.standard
+    
+    lazy var colourSwitch: UISwitch = {
+        let viewWidth = view.frame.width
+        let viewHeight = view.frame.height
+        
+        let colourSwitch  = UISwitch()
+        colourSwitch.frame = CGRect(x:viewWidth * 0.07, y:viewHeight * 0.92, width:75, height:50)
+        colourSwitch.isOn = false
+        colourSwitch.addTarget(self, action: Selector(("onClick:")), for: UIControl.Event.valueChanged)
+//        swh.on = true
+//                swh.addTarget(self, action: "onClick:", forControlEvents: UIControlEvents.ValueChanged)
+//                self.view.addSubview(swh)
+        return colourSwitch
+    }()
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        view.addSubview(colourSwitch)
         tableView.dataSource = self
         tableView.delegate = self
         
         textField.delegate = self
+
         
         if let aaa = userDefaults.object(forKey: "todos") {
             todos = aaa as! Array<String>
             print("aaaIsWhat\(aaa)")
             print("ここでとめます")
         }
+        
+        if let bbb = userDefaults.object(forKey: "colour"){
+            colour = bbb as! Bool
+        }
     
     }
+    
+    @objc func onClick(_ sender: UISwitch){
+            
+        if sender.isOn {
+                print("ON")
+                colourView.backgroundColor = UIColor.red
+                userDefaults.set(colour, forKey: "colour")
+                print("userDefault=\(userDefaults)")
+            }
+            else {
+                print("OFF")
+                colourView.backgroundColor = UIColor.blue
+            }
+        }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
